@@ -17,7 +17,7 @@ const Login = (props) => {
         enteredEmail.includes('@') && enteredPassword.trim().length > 6
       );
     }, 500);
-    return () => clearTimeout(timerId); // it doesn't run for first time
+    return () => clearTimeout(timerId); // it runs before executing useEffect but from the second time
   }, [enteredEmail, enteredPassword])
 
   const emailChangeHandler = (event) => setEnteredEmail(event.target.value);
